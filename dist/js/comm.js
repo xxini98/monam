@@ -32,8 +32,8 @@ let scrollTrigger = gsap
     scrollTrigger: {
       trigger: ".pen",
       start: "top top",
-      // end: "800 700",
-      end: "100% 90%",
+      // end: "+=200",
+      end: "90% 90%",
       markers: true, // 개발 가이드선
       scrub: true,
       pin: true,
@@ -41,9 +41,31 @@ let scrollTrigger = gsap
     },
     duration: 1, // 전체 애니메이션의 지속 시간을 4초로 설정
   })
-  .to(".bhead", { x: "+=192", duration: 2 }, )
-  .to(".bre", { x: "-=108", duration: 2 }, )
+  .to(".bhead", { x: "738px", duration: 2 })
+  // .to(".bre", { x: "-=108", duration: 2 }, )
   // .to(".bbody", { x: "-=1222", duration: 2 }, 1000);
-  .to(".bbody", { x: "-=872", duration: 2 }, );
+  .to(".bbody", { x: "-1565px", duration: 2 });
 
 // ScrollTrigger가 시작되면 start와 end 값을 동적으로 변경
+
+gsap.utils.toArray("section").forEach((item) => {
+  let color = item.getAttribute("data-bgcolor");
+
+  ScrollTrigger.create({
+    trigger: item,
+    start: "top 50%",
+    end: "bottom 5%",
+    markers: true,
+
+    onEnter: () =>
+      gsap.to("body", {
+        backgroundColor: color,
+        duration: .2,
+      }),
+    onEnterBack: () =>
+      gsap.to("body", {
+        backgroundColor: color,
+        duration: .2,
+      }),
+  });
+});
