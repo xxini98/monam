@@ -61,6 +61,10 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Black+Han+Sans:400"
+      rel="stylesheet"
+    />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./dist/css/comm.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -86,7 +90,7 @@
             <a href="#"> 모나미 </a>
           </h1>
         </div>
-        <nav id="gnb">
+        <!-- <nav id="gnb">
           <ul class="depth1">
             <li class="link-depth on">
               <a href="#">브랜드 소개</a>
@@ -98,10 +102,10 @@
               <a href="#">CEO 메세지</a>
             </li>
           </ul>
-        </nav>
+        </nav> -->
       </header>
       <main id="main">
-        <section id="pen153-wrap">
+        <section id="pen153-wrap" data-bgcolor="#ffffff">
           <div class="pen">
             <img
               src="./images/comm/monami-head.png"
@@ -120,19 +124,98 @@
             />
           </div>
         </section>
-        <section id="brand-intro">
+        <section id="brand-intro" data-bgcolor="#f7f7f7">
           <h2 class="blind">모나미 소개</h2>
           <div class="brand-cont">
+            <div class="brand-right">
+              <div class="brand-image">
+                <img
+                  src="./images/comm/monami-black.png"
+                  alt="모나미 153 흑"
+                  class="_153 black_153"
+                  data-aos="fade-in"
+                  data-aos-delay="300"
+                  data-aos-easing="linear"
+                  data-aos-mirror="true"
+                  data-aos-once="false"
+                  data-aos-anchor-placement="top-bottom"
+                />
+                <img
+                  src="./images/comm/monami-blue.png"
+                  alt="모나미 153 청"
+                  class="_153 blue_153"
+                  data-aos="fade-in"
+                  data-aos-delay="400"
+                  data-aos-easing="linear"
+                  data-aos-mirror="true"
+                  data-aos-once="false"
+                  data-aos-anchor-placement="top-bottom"
+                />
+                <img
+                  src="./images/comm/monami-red.png"
+                  alt="모나미 153 적"
+                  class="_153 red_153"
+                  data-aos="fade-in"
+                  data-aos-delay="500"
+                  data-aos-easing="linear"
+                  data-aos-mirror="true"
+                  data-aos-once="false"
+                  data-aos-anchor-placement="top-bottom"
+                />
+              </div>
+            </div>
             <div class="brand-left">
               <p class="brand-tit">
-                평범합니다 <br />그래서 <br />
-                특별합니다
+                <span
+                  data-aos="fade-down"
+                  data-aos-delay="1300"
+                  data-aos-easing="linear"
+                  data-aos-mirror="true"
+                  data-aos-once="false"
+                  data-aos-anchor-placement="top-bottom"
+                  >평범합니다</span
+                >
+                <span
+                  data-aos="fade-left"
+                  data-aos-delay="1300"
+                  data-aos-easing="linear"
+                  data-aos-mirror="true"
+                  data-aos-once="false"
+                  data-aos-anchor-placement="top-bottom"
+                  >그래서</span
+                >
+                <span
+                  data-aos="fade-up"
+                  data-aos-delay="1300"
+                  data-aos-easing="linear"
+                  data-aos-mirror="true"
+                  data-aos-once="false"
+                  data-aos-anchor-placement="top-bottom"
+                  >특별합니다.</span
+                >
               </p>
-              <p class="brand-txt">
-                언제 어디서든 필기구가 필요한 순간
-                <br />
-                주변을 둘러보면 늘 모나미 제품이 있습니다.
+              <p
+                class="brand-txt"
+                data-aos="fade-in"
+                data-aos-delay="1700"
+                data-aos-easing="linear"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-bottom"
+              >
+                <span>언제 어디서든 필기구가 필요한 순간</span>
+                <span>주변을 둘러보면 늘 모나미 제품이 있습니다.</span>
               </p>
+            </div>
+          </div>
+        </section>
+        <section id="company_info" data-bgcolor="#f7f7f7">
+          <div class="company_info-wrap">
+            <div class="cp_info info-head">
+              <div class="info-tit">COMPANY INFO</div>
+              <div class="info-txt">
+                언제 어디서나 모나미는 당신 곁에 있습니다.
+              </div>
             </div>
             <div class="brand-right"></div>
           </div>
@@ -171,23 +254,8 @@
             <div class="brand-right"></div>
           </div>
         </section>
-        <section id="brand-intro">
-          <h2 class="blind">모나미 소개</h2>
-          <div class="brand-cont">
-            <div class="brand-left">
-              <p class="brand-tit">
-                평범합니다 <br />그래서 <br />
-                특별합니다
-              </p>
-              <p class="brand-txt">
-                언제 어디서든 필기구가 필요한 순간
-                <br />
-                주변을 둘러보면 늘 모나미 제품이 있습니다.
-              </p>
-            </div>
-            <div class="brand-right"></div>
-          </div>
-        </section>
+
+        
       </main>
     </div>
   </body>
