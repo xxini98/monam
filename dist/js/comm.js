@@ -70,3 +70,47 @@ gsap.utils.toArray("section").forEach((item) => {
 });
 
 AOS.init();
+
+VanillaTilt.init(document.querySelectorAll(".card-element"), {
+  max: 25,
+  speed: 400,
+});
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+ScrollTrigger.create({
+  trigger: '.contentss',
+  start: "top 100",
+  end: "bottom top+=300",
+  pin: '.main-number',
+  markers: true,
+  pinSpacing: false,
+  onLeave: function() {
+    gsap.to('.main-number', { autoAlpha: 0, duration: 0.5, overwrite: "auto" })
+  },
+  onEnterBack: function() {
+    gsap.to('.main-number', { autoAlpha: 1, duration: 0.5, overwrite: "auto" })
+  }
+})
+
+let contents = document.querySelectorAll(".content");
+
+contents.forEach((content, i) => {
+  let number = content.querySelector('.secondary-number')
+  ScrollTrigger.create({
+      trigger: content,
+      start: "top 100",
+      end: "+=" + (content.offsetHeight - 15),
+      pin: number,
+      markers: true,
+      pinSpacing: false,
+      onLeave: function() {
+        gsap.to(number, { autoAlpha: 0, duration: 0.3, overwrite: "auto" })
+      },
+      onEnterBack: function() {
+        gsap.to(number, { autoAlpha: 1, duration: 0.3, overwrite: "auto" })
+      }
+  })
+});

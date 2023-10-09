@@ -1,118 +1,116 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>서브타이틀 | 프로젝트 이름</title>
-    <meta
-      name="description"
-      content="네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="페이지 제목" />
-    <meta property="og:description" content="페이지 설명" />
-    <meta
-      property="og:image"
-      content="http://www.mysite.com/article/article1_featured_image.jpg"
-    />
-    <meta
-      property="og:url"
-      content="http://www.mysite.com/article/article1.html"
-    />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="페이지 제목" />
-    <meta name="twitter:description" content="페이지 설명" />
-    <meta
-      name="twitter:image"
-      content="http://www.mysite.com/article/article1.html"
-    />
-    <meta name="twitter:domain" content="사이트 명" />
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./dist/css/comm.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script defer src="./dist/js/comm.js"></script>
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   </head>
   <body>
-    <div id="u-skip">
-      <a href="#gnb"><span>주요메뉴 바로가기</span></a>
-      <a href="#main"><span>컨텐츠 바로가기</span></a>
-      <a href="#footer"><span>풋터 바로가기</span></a>
-    </div>
-    <div class="wrap">
-      <!-- logo 왼쪽 type -->
-      <header id="header" class="container">
-        <div class="inner">
-          <h1 id="logo">
-            <a href="#">logo</a>
-          </h1>
-          <nav class="gnb-wrap">
-            <!-- a: 링크 연결 / button : 동적처리 -->
-            <!-- 링크 연결 없이 스크립트 처리 -->
-            <a href="javascript:void(0)">
-              <span class="material-icons-outlined"> segment </span>
-            </a>
-          </nav>
-          <div class="util">
-            <ul class="lst-util">
-              <li>
-                <!-- a : 링크 연결 / button : 동작처리 -->
-                <!-- 링크 연결 없이 스크립트 처리 -->
-                <a href="javascript:void(0)">
-                  <span class="material-icons-outlined"> language </span>
-                </a>
-              </li>
-              <li>
-                <button class="btn-g btn-search">
-                  <span class="material-icons-outlined"> search </span>
-                  <span class="blind">검색</span>
-                </button>
-              </li>
-              <li>
-                <a href="#" class="btn-g btn-my">
-                  <span class="material-icons-outlined"> account_circle </span>
-                  <span class="blind">마이페이지</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </header>
-      <style>
-        #header {
-          position: relative;
+    <article class="article">
+      <div class="bg"></div>
+      <div class="article-container">
+        <span class="article-type">FEATURED</span>
+        <h3 class="article-title">Blue Ocean Waves Crash</h3>
+        <span>-----</span>
+        <p class="article-text">
+          See the beatuiful oceans of the Pacific coast where the water is so
+          clean you can see the sand.
+        </p>
+      </div>
+    </article>
+
+    <article class="article" id="cave">
+      <div class="bg"></div>
+      <div class="article-container">
+        <span class="article-type">FEATURED</span>
+        <h3 class="article-title">Carves In The Caves</h3>
+        <span>-----</span>
+        <p class="article-text">
+          Long exposure photography is when you leave the shutter open longer
+          than usual to pick up more light.
+        </p>
+      </div>
+    </article>
+
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .article {
+        box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.2);
+        transform-style: preserve-3d;
+        width: 300px;
+        height: 600px;
+
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        color: white;
+        text-align: center;
+        transition: all 0.2s ease;
+
+        &:hover {
+          .bg {
+            filter: blur(1.8px);
+            transition: all 0.2s ease;
+          }
         }
-        /* POSITION으로 센터하기 */
-        #header #logo {
+
+        .bg {
+          background: url("https://images.pexels.com/photos/47424/pexels-photo-47424.jpeg");
+          background-size: cover;
+          width: 100%;
+          height: 100%;
           position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
         }
-      </style>
-      <div class="slide-wrap slide-name">slide</div>
-      <main id="main" class="container">컨텐츠</main>
-      <footer id="footer" class="container">풋터</footer>
-    </div>
+        .article-container {
+          position: absolute;
+          z-index: 1;
+        }
+        &-container {
+          height: 100%;
+          margin: -40px 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+          transform: translateZ(100px);
+        }
+        &-type {
+          font-size: 14px;
+          letter-spacing: 3px;
+        }
+        &-title {
+          font-size: 40px;
+          text-align: center;
+          margin: 15px 0;
+        }
+        &-text {
+          font-size: 16px;
+          text-align: center;
+          line-height: 26px;
+        }
+      }
+      #cave {
+        margin: 0 20px;
+        .bg {
+          background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+            url("https://i.imgur.com/rvho5lK.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    </style>
+
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".article"), {
+        max: 25,
+        reset: true,
+        speed: 400,
+        transition: true,
+      });
+    </script>
   </body>
 </html>
