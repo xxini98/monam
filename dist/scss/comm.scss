@@ -17,6 +17,12 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
+  background: #ffffff;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
 }
 
 // 헤더
@@ -119,7 +125,6 @@
 #brand-intro {
   width: 100%;
   height: 100vh;
-  // background: #f7f7f7;
   .brand-cont {
     display: flex;
     justify-content: space-evenly;
@@ -171,18 +176,16 @@
 // company infomation
 #company_info {
   width: 100%;
-  background: #f7f7f7;
+  margin: 100px auto 0;
 }
 .company_info-wrap {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: #ffffff;
+  background: #f7f7f7;
 }
 .company_infomation {
-  width: 1440px;
   height: 100%;
-  margin: 100px auto 0;
 }
 .info-head {
   text-align: center;
@@ -210,9 +213,9 @@
   width: 60%;
   height: 470px;
   margin-top: 100px;
-  outline: 2px solid #151515;
+  outline: 2px solid #9f9f9f;
   outline-offset: -50px;
-  background: #efefef;
+  background: #fcfcfc;
   .txt-rec {
     display: inline-block;
     position: absolute;
@@ -360,36 +363,61 @@
   height: calc(100% - 56px);
 }
 
+// #timeline-wrap
+#history-intro {
+  width: 100%;
+  margin: 100px auto 0;
+  background-color: #ffffff;
+  .history-timeline-wrap {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+  }
+  .heading {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 100px;
+    z-index: 10;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 4px solid #51372f;
+  }
+}
 
-#timeline {
+#timelines {
   width: 100%;
   height: 200vh;
-}.main-number,
-.secondary-number {
-  font-size: 2em;
-}
-.secondary-number {
-  position: absolute;
-  left: -100px;
-  top: 0;
-}
-.contentss {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  display: block;
-  position: relative;
-}
-.container {
-  float: left;
-}
-.contentss {
-  margin-left: 135px;
-  position: relative;
-}
-.content {
-  position: relative;
-  overflow: visible;
-  min-height: 100px;
+  background: #ffffff;
+  .main-number,
+  .secondary-number {
+    font-size: 2em;
+  }
+  .secondary-number {
+    position: absolute;
+    left: -100px;
+    top: 0;
+  }
+  .contentss {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+  }
+  .main-19 {
+    float: left;
+  }
+  .change_number {
+    margin-left: 135px;
+    position: relative;
+  }
+  .content {
+    position: relative;
+    overflow: visible;
+    min-height: 100px;
+  }
 }
 @import "main", "contents";

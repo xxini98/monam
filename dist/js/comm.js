@@ -11,6 +11,8 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+gsap.registerPlugin(ScrollTrigger);
+
 gsap.to(".company_info-wrap", {
   scrollTrigger: {
     trigger: "#company_info", //객체기준범위
@@ -47,6 +49,8 @@ let scrollTrigger = gsap
 
 // ScrollTrigger가 시작되면 start와 end 값을 동적으로 변경
 
+gsap.registerPlugin(ScrollTrigger);
+
 gsap.utils.toArray("section").forEach((item) => {
   let color = item.getAttribute("data-bgcolor");
 
@@ -76,41 +80,94 @@ VanillaTilt.init(document.querySelectorAll(".card-element"), {
   speed: 400,
 });
 
-
 gsap.registerPlugin(ScrollTrigger);
 
-
 ScrollTrigger.create({
-  trigger: '.contentss',
+  trigger: ".change_number",
   start: "top 100",
   end: "bottom top+=300",
-  pin: '.main-number',
-  markers: true,
+  pin: ".main-number",
+  markers: false,
   pinSpacing: false,
-  onLeave: function() {
-    gsap.to('.main-number', { autoAlpha: 0, duration: 0.5, overwrite: "auto" })
+  onLeave: function () {
+    gsap.to(".main-number", { autoAlpha: 0, duration: 0.5, overwrite: "auto" });
   },
-  onEnterBack: function() {
-    gsap.to('.main-number', { autoAlpha: 1, duration: 0.5, overwrite: "auto" })
-  }
-})
+  onEnterBack: function () {
+    gsap.to(".main-number", { autoAlpha: 1, duration: 0.5, overwrite: "auto" });
+  },
+});
 
 let contents = document.querySelectorAll(".content");
 
 contents.forEach((content, i) => {
-  let number = content.querySelector('.secondary-number')
+  let number = content.querySelector(".secondary-number");
   ScrollTrigger.create({
-      trigger: content,
-      start: "top 100",
-      end: "+=" + (content.offsetHeight - 15),
-      pin: number,
-      markers: true,
-      pinSpacing: false,
-      onLeave: function() {
-        gsap.to(number, { autoAlpha: 0, duration: 0.3, overwrite: "auto" })
-      },
-      onEnterBack: function() {
-        gsap.to(number, { autoAlpha: 1, duration: 0.3, overwrite: "auto" })
-      }
-  })
+    trigger: content,
+    start: "top 100",
+    end: "+=" + (content.offsetHeight - 15),
+    pin: number,
+    markers: false,
+    pinSpacing: false,
+    onLeave: function () {
+      gsap.to(number, { autoAlpha: 0, duration: 0.3, overwrite: "auto" });
+    },
+    onEnterBack: function () {
+      gsap.to(number, { autoAlpha: 1, duration: 0.3, overwrite: "auto" });
+    },
+  });
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+const headingTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#history-intro",
+    markers: true,
+    start: "30% 50%",
+    end: "50% 50%",
+    scrub: 5,
+    duration: 2,
+    pin: false,
+    pinSpacing: false,
+    repeat: -1,
+    repeatDelay: 2,
+    yoyo: true,
+  },
+});
+
+headingTl
+  .from(".heading", {
+    duration: 1,
+    scaleX: 0,
+    transformOrigin: "left",
+    ease: "expo.inOut",
+  })
+  .from(
+    ".heading h1",
+    {
+      y: "100%",
+      duration: 0.8,
+      ease: "expo.out",
+    },
+    "-=0.2"
+  )
+  .from(
+    ".heading",
+    {
+      css: { borderBottom: "4px solid black" },
+      duration: 2,
+      transformOrigin: "right",
+      ease: "none",
+    },
+    "-=1"
+  )
+  .from(
+    ".heading h1",
+    {
+      duration: 2,
+      transformOrigin: "right",
+      ease: "none",
+      css: { color: "black" },
+    },
+    "-=2"
+  );
