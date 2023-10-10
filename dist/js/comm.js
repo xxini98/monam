@@ -82,19 +82,33 @@ VanillaTilt.init(document.querySelectorAll(".card-element"), {
 
 gsap.registerPlugin(ScrollTrigger);
 
-ScrollTrigger.create({
-  trigger: ".change_number",
-  start: "top 100",
-  end: "bottom top+=300",
-  pin: ".main-number",
-  markers: false,
-  pinSpacing: false,
-  onLeave: function () {
-    gsap.to(".main-number", { autoAlpha: 0, duration: 0.5, overwrite: "auto" });
-  },
-  onEnterBack: function () {
-    gsap.to(".main-number", { autoAlpha: 1, duration: 0.5, overwrite: "auto" });
-  },
+let contentNum = document.querySelectorAll(".chapter");
+
+contentNum.forEach((content, i) => {
+  let mainNum = content.querySelector(".main-number");
+  ScrollTrigger.create({
+    trigger: content,
+    start: "top 100",
+    // end: "bottom top+=300",
+    end: "bottom top",
+    pin: mainNum,
+    markers: true,
+    pinSpacing: false,
+    onLeave: function () {
+      gsap.to(mainNum, {
+        autoAlpha: 0,
+        duration: 0.5,
+        overwrite: "auto",
+      });
+    },
+    onEnterBack: function () {
+      gsap.to(mainNum, {
+        autoAlpha: 1,
+        duration: 0.5,
+        overwrite: "auto",
+      });
+    },
+  });
 });
 
 let contents = document.querySelectorAll(".content");
@@ -106,68 +120,112 @@ contents.forEach((content, i) => {
     start: "top 100",
     end: "+=" + (content.offsetHeight - 15),
     pin: number,
-    markers: false,
+    markers: true,
+    scrub: true,
     pinSpacing: false,
     onLeave: function () {
-      gsap.to(number, { autoAlpha: 0, duration: 0.3, overwrite: "auto" });
+      gsap.to(number, { opacity: 0, duration: 0.3, overwrite: "auto" });
     },
     onEnterBack: function () {
-      gsap.to(number, { autoAlpha: 1, duration: 0.3, overwrite: "auto" });
+      gsap.to(number, { opacity: 1, duration: 0.3, overwrite: "auto" });
     },
   });
 });
 
 gsap.registerPlugin(ScrollTrigger);
 
-const headingTl = gsap.timeline({
+const tl = gsap.timeline({
   scrollTrigger: {
-    trigger: "#history-intro",
-    markers: true,
-    start: "30% 50%",
-    end: "50% 50%",
-    scrub: 5,
-    duration: 2,
+    trigger: ".history-timeline-head",
+    start: "-150% 50%",
+    // end: "+=200",
+    end: "150% 50%%",
+    markers: false, // 개발 가이드선
+    scrub: true,
     pin: false,
-    pinSpacing: false,
-    repeat: -1,
-    repeatDelay: 2,
-    yoyo: true,
+    // pin: true,
   },
 });
 
-headingTl
-  .from(".heading", {
-    duration: 1,
-    scaleX: 0,
-    transformOrigin: "left",
-    ease: "expo.inOut",
-  })
-  .from(
-    ".heading h1",
-    {
-      y: "100%",
-      duration: 0.8,
-      ease: "expo.out",
-    },
-    "-=0.2"
-  )
-  .from(
-    ".heading",
-    {
-      css: { borderBottom: "4px solid black" },
-      duration: 2,
-      transformOrigin: "right",
-      ease: "none",
-    },
-    "-=1"
-  )
-  .from(
-    ".heading h1",
-    {
-      duration: 2,
-      transformOrigin: "right",
-      ease: "none",
-      css: { color: "black" },
-    },
-    "-=2"
-  );
+tl.to(".history_bline", {
+  width: "240px",
+  duration: 3,
+  ease: "Power1.easeInOut",
+});
+tl.to(".history_title", {
+  y: "0",
+  duration: 10,
+  ease: "Power1.easeInOut",
+});
+
+const projectTriggers = document.querySelectorAll(".ht_content");
+
+projectTriggers.forEach(addTimeline);
+
+function addTimeline(project, index) {
+  const image = project.querySelector(".ht-img");
+  const text = project.querySelectorAll(".ht-tit-wrap");
+
+  const timeline = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: project,
+        start: "center bottom",
+        end: "-10% top",
+        ease: "power2",
+        scrub: true,
+        markers: false,
+        toggleActions: "play none none reverse",
+      },
+    })
+    .from(image, {
+      x: -100,
+      opacity: 0,
+      duration: 1,
+    })
+    .from(
+      text,
+      {
+        x: 100,
+        opacity: 0,
+        stagger: 1,
+      },
+      "-=0.5"
+    );
+}
+
+// ScrollTrigger.create({
+//   trigger: ".change_number",
+//   start: "top 100",
+//   // end: "bottom top+=300",
+//   end: "bottom top",
+//   pin: ".main-number",
+//   markers: true,
+//   pinSpacing: false,
+//   onLeave: function () {
+//     gsap.to(".main-number", { autoAlpha: 0, duration: 0.5, overwrite: "auto" });
+//   },
+//   onEnterBack: function () {
+//     gsap.to(".main-number", { autoAlpha: 1, duration: 0.5, overwrite: "auto" });
+//   },
+// });
+
+// let contents = document.querySelectorAll(".content");
+
+// contents.forEach((content, i) => {
+//   let number = content.querySelector(".secondary-number");
+//   ScrollTrigger.create({
+//     trigger: content,
+//     start: "top 100",
+//     end: "+=" + (content.offsetHeight - 15),
+//     pin: number,
+//     markers: false,
+//     pinSpacing: false,
+//     onLeave: function () {
+//       gsap.to(number, { autoAlpha: 0, duration: 0.3, overwrite: "auto" });
+//     },
+//     onEnterBack: function () {
+//       gsap.to(number, { autoAlpha: 1, duration: 0.3, overwrite: "auto" });
+//     },
+//   });
+// });

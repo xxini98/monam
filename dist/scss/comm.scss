@@ -186,10 +186,10 @@
 }
 .company_infomation {
   height: 100%;
+  padding: 100px 0;
 }
 .info-head {
   text-align: center;
-  padding: 100px 0;
   .info-tit {
     display: inline-block;
     position: relative;
@@ -201,6 +201,7 @@
 }
 .info-body {
   width: 100%;
+  margin-top: 100px;
   .text-rec-wrap {
     position: relative;
     text-align: right;
@@ -368,56 +369,132 @@
   width: 100%;
   margin: 100px auto 0;
   background-color: #ffffff;
-  .history-timeline-wrap {
+  .history-timeline-head {
     position: relative;
-    width: 100%;
-    height: 50vh;
-  }
-  .heading {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 100px;
-    z-index: 10;
-    text-align: center;
     overflow: hidden;
-    border-bottom: 4px solid #51372f;
+    width: 100%;
+    // height: 50vh;
+  }
+  .history_bline {
+    width: 0px;
+    height: 4px;
+    margin: 0 auto;
+    background: #c40f39;
+  }
+  .history_title {
+    transform: translate(0, 900px);
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    padding-bottom: 20px;
+  }
+}
+.history-timeline {
+  width: 100%;
+  margin-top: 200px;
+}
+.ht_content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .ht-img {
+    position: relative;
+    width: 60%;
+    img {
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.ht-tit-wrap {
+  position: relative;
+  width: 40%;
+  height: 400px;
+  top: 60px;
+  right: 60px;
+  background: rgba(248, 248, 248, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  z-index: 15;
+  .ht-tit {
+    .__htt {
+      position: absolute;
+      z-index: 10;
+      span {
+        font-weight: 700;
+        color: #303030;
+      }
+    }
+    ._htt-tit {
+      bottom: 20px;
+      right: 20px;
+      span {
+        font-size: 38px;
+      }
+    }
+    ._htt-year {
+      top: 20px;
+      left: 20px;
+    }
   }
 }
 
 #timelines {
-  width: 100%;
-  height: 200vh;
+  width: 1200px;
+  padding-top: 100px;
+  margin: 0 auto;
+  margin-top: 100px;
   background: #ffffff;
-  .main-number,
-  .secondary-number {
-    font-size: 2em;
-  }
-  .secondary-number {
-    position: absolute;
-    left: -100px;
-    top: 0;
-  }
-  .contentss {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    display: block;
-    position: relative;
-  }
+}
+.history {
+  position: relative;
   .main-19 {
-    float: left;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    transform: translateX(-50%);
   }
-  .change_number {
-    margin-left: 135px;
-    position: relative;
-  }
-  .content {
-    position: relative;
-    overflow: visible;
-    min-height: 100px;
+  .main-number {
+    font-size: 80px;
   }
 }
+.secondary-number {
+  font-size: 80px;
+}
+.secondary-number {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 4%;
+  top: 0;
+  opacity: 0.1;
+  .text {
+    font-size: 80px;
+    display: inline-block;
+    padding: 43px 0;
+    font-size: 20px;
+  }
+}
+// .contentss {
+//   width: 100%;
+//   max-width: 900px;
+//   margin: 0 auto;
+//   display: block;
+//   position: relative;
+// }
+
+.change_number {
+  position: relative;
+}
+.content {
+  position: relative;
+  overflow: visible;
+  text-align: center;
+  min-height: 150px;
+}
+
 @import "main", "contents";
