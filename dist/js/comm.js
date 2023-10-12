@@ -12,8 +12,7 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-
-// pen 조립 
+// pen 조립
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".company_info-wrap", {
@@ -52,8 +51,6 @@ let scrollTrigger = gsap
 
 // ScrollTrigger가 시작되면 start와 end 값을 동적으로 변경
 
-
-
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.utils.toArray("section").forEach((item) => {
@@ -78,19 +75,12 @@ gsap.utils.toArray("section").forEach((item) => {
   });
 });
 
-
-
 AOS.init();
-
-
 
 VanillaTilt.init(document.querySelectorAll(".card-element"), {
   max: 25,
   speed: 400,
 });
-
-
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -154,11 +144,6 @@ contents.forEach((content, i) => {
     opacity: 1,
   });
 });
-
-
-
-
-
 
 gsap.registerPlugin(ScrollTrigger);
 
