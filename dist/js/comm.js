@@ -75,186 +75,105 @@ gsap.utils.toArray("section").forEach((item) => {
   });
 });
 
+// AOS 효과
+
 AOS.init();
+
+// tilt.js
 
 VanillaTilt.init(document.querySelectorAll(".card-element"), {
   max: 25,
   speed: 400,
 });
 
-// gsap.registerPlugin(ScrollTrigger);
 
-// let contentNum = document.querySelectorAll(".chapter");
-
-// contentNum.forEach((content, i) => {
-//   let mainNum = content.querySelector(".main-number");
-//   ScrollTrigger.create({
-//     trigger: content,
-//     start: "top 100",
-//     // end: "bottom top+=300",
-//     // end: "bottom 50%",
-//     end: "+=" + (content.offsetHeight - 250),
-//     pin: mainNum,
-//     markers: true,
-//     pinSpacing: false,
-//     onLeave: function () {
-//       gsap.to(mainNum, {
-//         autoAlpha: 0,
-//         duration: 0.1,
-//         overwrite: "auto",
-//       });
-//     },
-//     onEnterBack: function () {
-//       gsap.to(mainNum, {
-//         autoAlpha: 1,
-//         duration: 0.1,
-//         overwrite: "auto",
-//       });
-//     },
-//   });
-// });
-
-// let contents = document.querySelectorAll(".content");
-
-// contents.forEach((content, i) => {
-//   let number = content.querySelector(".sec-text");
-//   let colors = content.querySelectorAll(".secondary-number");
-//   ScrollTrigger.create({
-//     trigger: content,
-//     start: "top 100",
-//     end: "+=" + (content.offsetHeight - 100),
-//     pin: number,
-//     markers: true,
-//     pinSpacing: false,
-//     onLeave: function () {
-//       gsap.to(number, {
-//         autoAlpha: 0,
-//         opacity: 0,
-//         duration: 0.1,
-//         overwrite: "auto",
-//       });
-//     },
-//     onEnterBack: function () {
-//       gsap.to(number, {
-//         autoAlpha: 1,
-//         opacity: 1,
-//         duration: 0.1,
-//         color: colors,
-//         overwrite: "auto",
-//       });
-//     },
-//     opacity: 1,
-//   });
-// });
-
-// Timeline
+// timeline 효과
 
 gsap.registerPlugin(ScrollTrigger);
 
-function initTimeline() {
-  let parent_container = document.getElementById("section-timeline");
-  let timeline_container = parent_container.querySelector(
-    ".timeline-container"
-  );
-  var sections = timeline_container.querySelectorAll(".year");
+let contentNum = document.querySelectorAll(".chapter");
 
-  const vh = (coef) => window.innerHeight * (coef / 100);
-
-  let parentST = ScrollTrigger.create({
-    id: "parent-timeline",
-    trigger: parent_container,
-    start: "top top",
-    toggleClass: "started",
-    pin: true,
-    markers: true,
-    end: () => "+=" + (sections.length - 1) * vh(50),
-  });
-
-  let currentSection;
-
-  function goto(section, i) {
-    if (currentSection !== section) {
-      // if the section is the currentSection, skip
-      // move the container
-      gsap.to(timeline_container, {
-        y: -48 * i,
-        duration: 0.6,
-        overwrite: true,
+contentNum.forEach((content, i) => {
+  let mainNum = content.querySelector(".main-number");
+  ScrollTrigger.create({
+    trigger: content,
+    start: "top 100",
+    // end: "bottom top+=300",
+    // end: "bottom 50%",
+    end: "+=" + (content.offsetHeight - 250),
+    pin: mainNum,
+    markers: false,
+    pinSpacing: false,
+    onLeave: function () {
+      gsap.to(mainNum, {
+        autoAlpha: 1,
+        duration: 0.1,
+        overwrite: "auto",
       });
-      let tl = gsap.timeline({ defaults: { overwrite: true } });
-      // animate OUT the current section (if there is one)
-      if (currentSection) {
-        tl.to(currentSection.querySelector("h2"), {
-          fontSize: "2rem",
-          fontColor: "red",
-        });
-        tl.to(
-          currentSection,
-          {
-            maxHeight: "3rem",
-            fontColor: "red",
-          },
-          0
-        );
-        tl.to(
-          currentSection.querySelectorAll("p"),
-          {
-            opacity: 0,
-            duration: 0.25,
-            maxHeight: "0%",
-          },
-          0
-        );
-      }
-      currentSection = section;
-      // animate IN the new section (if there is one)
-      if (section) {
-        tl.to(
-          section.querySelector("h2"),
-          {
-            fontSize: "10rem",
-            fontColor: "red",
-          },
-          0
-        );
-        tl.to(
-          section,
-          {
-            maxHeight: "80vh",
-          },
-          0
-        );
-        tl.fromTo(
-          section.querySelectorAll("p"),
-          { maxHeight: "0%" },
-          {
-            opacity: 1,
-            maxHeight: "100%",
-          }
-        );
-      }
-    }
-  }
-
-  sections.forEach((sct, i) => {
-    let sct_index = sct.getAttribute("data-count");
-
-    ScrollTrigger.create({
-      start: () => parentST.start + i * window.innerHeight * 0.4,
-      end: () => "+=" + window.innerHeight * 0.4,
-      markers: true,
-      onLeaveBack: () => i || goto(null, 0),
-      onToggle: (self) => self.isActive && goto(sct, sct_index),
-    });
+    },
+    onEnterBack: function () {
+      gsap.to(mainNum, {
+        autoAlpha: 1,
+        duration: 0.1,
+        overwrite: "auto",
+      });
+    },
   });
-}
+});
 
-initTimeline();
+let contents = document.querySelectorAll(".content");
+
+contents.forEach((content, i) => {
+  let number = content.querySelector(".sec-text");
+  ScrollTrigger.create({
+    trigger: content,
+    start: "top 100",
+    end: "+=" + (content.offsetHeight - 100),
+    // end: "bottom 100",
+    pin: number,
+    scrub: true,
+    markers: true,
+    onLeave: function () {
+      number.classList.remove("active");
+      gsap.to(number, {
+        autoAlpha: 0.1,
+        opacity: 0,
+        duration: 0.1,
+        overwrite: "auto",
+      });
+    },
+    onLeaveBack: function () {
+      number.classList.remove("active");
+      gsap.to(number, {
+        autoAlpha: 0.2,
+        opacity: 0.2,
+        duration: 0.1,
+        overwrite: "auto",
+      });
+    },
+    onEnter: function () {
+      number.classList.add("active");
+      gsap.to(number, {
+        autoAlpha: 1,
+        opacity: 1,
+        duration: 0.1,
+        overwrite: "auto",
+      });
+    },
+    onEnterBack: function () {
+      number.classList.add("active");
+      gsap.to(number, {
+        autoAlpha: 1,
+        opacity: 1,
+        duration: 0.1,
+        overwrite: "auto",
+      });
+    },
+  });
+});
 
 
-
-
-
+// 연혁 제목 나오는 효과
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -283,9 +202,7 @@ tl.to(".history_title", {
 });
 
 
-
-
-
+// 이미지 Fade in (left & right) 효과
 
 const projectTriggers = document.querySelectorAll(".ht_content");
 
@@ -303,7 +220,7 @@ function addTimeline(project, index) {
         end: "-10% top",
         ease: "power2",
         scrub: true,
-        markers: true,
+        markers: false,
         toggleActions: "play none none reverse",
       },
     })
@@ -322,5 +239,3 @@ function addTimeline(project, index) {
       "-=0.5"
     );
 }
-
-

@@ -603,7 +603,7 @@ legend {
 
 #history-intro {
   width: 100%;
-  margin: 100px auto 0;
+  margin: 100px auto 350px;
   background-color: #ffffff;
 }
 #history-intro .history-timeline-head {
@@ -703,6 +703,20 @@ legend {
   font-size: 100px;
 }
 
+.sec-text {
+  opacity: 0.2;
+}
+
+.sec-text.active {
+  opacity: 1;
+}
+.sec-text.active .secondary-number {
+  color: #c40f39;
+}
+.sec-text.active .text {
+  opacity: 1;
+}
+
 .secondary-number {
   position: absolute;
   transform: translateX(-50%);
@@ -712,11 +726,12 @@ legend {
 }
 
 .text {
+  opacity: 0;
   position: absolute;
-  top: 40px;
-  left: 35%;
+  top: 55px;
+  left: 30%;
   display: inline-block;
-  font-size: 16px;
+  font-size: 24px;
 }
 .text span {
   display: block;
@@ -731,100 +746,12 @@ legend {
   position: relative;
   overflow: visible;
   text-align: left;
-  min-height: 150px;
+  min-height: 200px;
 }
 
-.section-timeline {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  overflow: hidden;
-  height: 80vh;
-  background: #ffffff;
-}
-
-.test {
-  padding-top: 200px;
-}
-
-.timeline-container {
-  height: 80vh;
+#footer {
   width: 100%;
-  position: absolute;
-  /*   transition: 0.6s cubic-bezier(0.28, 0, 0.18, 1); */
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.timeline-container article {
-  position: relative;
-  z-index: 1000;
-  color: white;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-.timeline-container article.year {
-  /*   transition: 0.6s cubic-bezier(0.28, 0, 0.18, 1) 0.3s; */
-  height: 100vh;
-  max-height: 3rem;
-  position: relative;
-  color: rgb(0, 0, 0);
-  text-align: center;
-}
-
-.timeline-container article.year hgroup h2 {
-  /*   transition: 0.6s cubic-bezier(0.28, 0, 0.18, 1); */
-  font-size: 2rem;
-  line-height: 1;
-  margin: 0;
-}
-
-.timeline-container article.year hgroup p {
-  line-height: 1.5;
-  font-size: 1.25rem;
-  opacity: 0;
-  max-height: 0px;
-  max-width: 600px;
-  margin: 0 auto;
-  /*   transition: opacity 0.6s cubic-bezier(0.28, 0, 0.18, 1); */
-}
-
-/*ACTIVE*/
-#section-timeline article.year.active {
-  max-height: 80vh;
-}
-
-#section-timeline article.year hgroup:after {
-  content: "";
-  position: absolute;
-  /*top: 100%;*/
-  top: 90%;
-  left: 50%;
-  width: 4px;
-  background: #ffffff;
-  height: 120px;
-  max-height: 0px;
-  transform: translateX(-50%) translateY(-100%);
-}
-
-#section-timeline article.year.active hgroup:after {
-  max-height: 90px;
-}
-
-.timeline-container article.year.active hgroup h2 {
-  font-size: 10rem;
-}
-
-.timeline-container article.year.active hgroup p {
-  opacity: 1 !important;
-  max-height: 100%;
+  height: 100px;
 }
 
 .slide-intro {
