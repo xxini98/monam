@@ -452,26 +452,26 @@
   background: #ffffff;
 }
 .history {
-  position: relative;
   .main-19 {
-    position: absolute;
-    top: 0;
-    left: 10%;
-    transform: translateX(-50%);
+    position: relative;
+    .pin-spacer {
+      position: absolute !important;
+      top: 0 !important;
+      left: -7% !important;
+      z-index: 1;
+    }
   }
   .main-number {
     font-size: 80px;
   }
 }
-.secondary-number {
-  font-size: 80px;
-}
+
 .secondary-number {
   position: absolute;
   transform: translateX(-50%);
+  font-size: 80px;
   left: 4%;
   top: 0;
-  opacity: 0.1;
   .text {
     font-size: 80px;
     display: inline-block;

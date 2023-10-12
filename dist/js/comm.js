@@ -1,3 +1,4 @@
+// 부드럽게 하는 효과
 const lenis = new Lenis();
 
 lenis.on("scroll", (e) => {
@@ -11,6 +12,8 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+
+// pen 조립 
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".company_info-wrap", {
@@ -49,6 +52,8 @@ let scrollTrigger = gsap
 
 // ScrollTrigger가 시작되면 start와 end 값을 동적으로 변경
 
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.utils.toArray("section").forEach((item) => {
@@ -73,12 +78,19 @@ gsap.utils.toArray("section").forEach((item) => {
   });
 });
 
+
+
 AOS.init();
+
+
 
 VanillaTilt.init(document.querySelectorAll(".card-element"), {
   max: 25,
   speed: 400,
 });
+
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,21 +102,22 @@ contentNum.forEach((content, i) => {
     trigger: content,
     start: "top 100",
     // end: "bottom top+=300",
-    end: "bottom top",
+    // end: "bottom 50%",
+    end: "+=" + (content.offsetHeight - 135),
     pin: mainNum,
     markers: true,
     pinSpacing: false,
     onLeave: function () {
       gsap.to(mainNum, {
         autoAlpha: 0,
-        duration: 0.5,
+        duration: 0.1,
         overwrite: "auto",
       });
     },
     onEnterBack: function () {
       gsap.to(mainNum, {
         autoAlpha: 1,
-        duration: 0.5,
+        duration: 0.1,
         overwrite: "auto",
       });
     },
@@ -114,23 +127,38 @@ contentNum.forEach((content, i) => {
 let contents = document.querySelectorAll(".content");
 
 contents.forEach((content, i) => {
-  let number = content.querySelector(".secondary-number");
+  let number = content.querySelector(".sec-text");
   ScrollTrigger.create({
     trigger: content,
     start: "top 100",
     end: "+=" + (content.offsetHeight - 15),
     pin: number,
     markers: true,
-    scrub: true,
     pinSpacing: false,
     onLeave: function () {
-      gsap.to(number, { opacity: 0, duration: 0.3, overwrite: "auto" });
+      gsap.to(number, {
+        autoAlpha: 0,
+        opacity: 1,
+        duration: 0.1,
+        overwrite: "auto",
+      });
     },
     onEnterBack: function () {
-      gsap.to(number, { opacity: 1, duration: 0.3, overwrite: "auto" });
+      gsap.to(number, {
+        autoAlpha: 1,
+        opacity: 1,
+        duration: 0.1,
+        overwrite: "auto",
+      });
     },
+    opacity: 1,
   });
 });
+
+
+
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -193,39 +221,3 @@ function addTimeline(project, index) {
       "-=0.5"
     );
 }
-
-// ScrollTrigger.create({
-//   trigger: ".change_number",
-//   start: "top 100",
-//   // end: "bottom top+=300",
-//   end: "bottom top",
-//   pin: ".main-number",
-//   markers: true,
-//   pinSpacing: false,
-//   onLeave: function () {
-//     gsap.to(".main-number", { autoAlpha: 0, duration: 0.5, overwrite: "auto" });
-//   },
-//   onEnterBack: function () {
-//     gsap.to(".main-number", { autoAlpha: 1, duration: 0.5, overwrite: "auto" });
-//   },
-// });
-
-// let contents = document.querySelectorAll(".content");
-
-// contents.forEach((content, i) => {
-//   let number = content.querySelector(".secondary-number");
-//   ScrollTrigger.create({
-//     trigger: content,
-//     start: "top 100",
-//     end: "+=" + (content.offsetHeight - 15),
-//     pin: number,
-//     markers: false,
-//     pinSpacing: false,
-//     onLeave: function () {
-//       gsap.to(number, { autoAlpha: 0, duration: 0.3, overwrite: "auto" });
-//     },
-//     onEnterBack: function () {
-//       gsap.to(number, { autoAlpha: 1, duration: 0.3, overwrite: "auto" });
-//     },
-//   });
-// });
