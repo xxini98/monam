@@ -1,94 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
-    <script src="./dist/js/include.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js
-    "></script>
-  </head>
-  <body>
-    <section>dddd</section>
-    <div class="container">
-      <div class="box">
-        <div class="history_title">
-          <span>모나미 연혁</span>
-        </div>
-      </div>
-      <div class="middle"></div>
-      <div class="box"></div>
-    </div>
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      span,
-      p {
-        color: #f582a7;
-        font-family: Roboto, sans-serif;
-      }
-      body {
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        background-color: #180a0a;
-      }
-      section {
-        width: 100%;
-        height: 100vh;
-      }
-      .container {
-        min-height: 100vh;
-      }
-      .box {
-        overflow: hidden;
-      }
-
-      .right {
-        transform: translate(-500px, 0);
-        padding: 0 0 0 20px;
-      }
-    </style>
-
-    <script>
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#history-intro",
-          start: "10% 80%",
-          // end: "+=200",
-          end: "70% 80%%",
-          markers: true, // 개발 가이드선
-          scrub: true,
-          pin: false,
-          // pin: true,
-        },
-      });
-
-      tl.to(".history_bline", {
-        width: "350px",
-        duration: 1,
-        ease: "Power1.easeInOut",
-      });
-      tl.to(".history_title", {
-        y: "0",
-        duration: 1,
-        ease: "Power1.easeInOut",
-      });
-    </script>
-  </body>
-</html>
+            <!-- <div id="timelines">
+              <div class="timelines-wrap">
+                <div class="chapter cp1">
+                  <div class="h-intro m1"></div>
+                  <div class="timeline">
+                    <div class="history ch1">
+                      <div class="main-19">
+                        <div class="main-number">20</div>
+                      </div>
+                      <div class="change_number">
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number">22</div>
+                            <div class="text">
+                              모나미 컨셉스토어 성수점 오픈
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number">21</div>
+                            <div class="text">
+                              디자인 문구 브랜드 Zenith, ZEQUENZ 론칭 / 모나미몰
+                              쇼핑 앱 출시
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number">20</div>
+                            <div class="text">
+                              모나미 창립 60주년 기념 프러스펜 3000 데스크펜,
+                              프러스펜 3000 60색 세트 출시
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number">19</div>
+                            <div class="text">
+                              모나미 컨셉스토어 인사동점 오픈
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number">18</div>
+                            <div class="text">
+                              <span
+                                >대한민국 디자인 대상 디자인 경영부문 국무총리상
+                                수상 / 모나미 스토어 오픈 (롯데백화점
+                                부산점/평촌점, MCC 합정)
+                              </span>
+                              <span>
+                                153 고급필기구 런칭 (153 NEO 만년필) / 모나미
+                                타일랜드 아마타공장 증축</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number">17</div>
+                            <div class="text">
+                              153 고급 필기구 런칭(153 GOLD)
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number">16</div>
+                            <div class="text">
+                              모나미 컨셉스토어 2호점(DDP) / 3호점(에버랜드)
+                              오픈
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number" data-color="#ffffff">
+                              15
+                            </div>
+                            <div class="text">
+                              국내문구업계 최초 모나미 컨셉스토어 1호점 오픈
+                              (서울 합정동)
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number">14</div>
+                            <div class="text">
+                              153 고급 필기구 런칭 (153 리미티드, 153 ID, 153
+                              리스펙트)
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number">13</div>
+                            <div class="text">
+                              153 볼펜 출시 50년 / 프러스펜 S 출시
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number">12</div>
+                            <div class="text">
+                              기업용 홍보 통합 제작 서비스 MPOD 솔루션 설립
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content">
+                          <div class="sec-text">
+                            <div class="secondary-number">10</div>
+                            <div class="text">
+                              모나미 창립 50주년 / 모나미 타일랜드 아마타공장
+                              신축
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
