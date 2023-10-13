@@ -127,7 +127,7 @@ body {
   background: #fff;
   font-size: 14px;
   line-height: 1.5;
-  font-family: "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
+  font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
   color: #222;
 }
 
@@ -401,7 +401,6 @@ legend {
 
 #company_info {
   width: 100%;
-  margin: 100px auto 0;
 }
 
 .company_info-wrap {
@@ -409,6 +408,10 @@ legend {
   height: 100%;
   border-radius: 50%;
   background: #f7f7f7;
+}
+
+.cif2 {
+  background: linear-gradient(#f7f7f7, #ffffff);
 }
 
 .company_infomation {
@@ -493,7 +496,6 @@ legend {
 }
 
 .card_wraps {
-  margin: 28px;
   transform-style: preserve-3d;
   transform: perspective(800px);
   cursor: pointer;
@@ -603,8 +605,8 @@ legend {
 
 #history-intro {
   width: 100%;
-  margin: 100px auto 350px;
-  background-color: #ffffff;
+  margin: 100px auto 0;
+  background: linear-gradient(#ffffff, #f7f7f7);
 }
 #history-intro .history-timeline-head {
   position: relative;
@@ -640,11 +642,13 @@ legend {
 .ht_content .ht-img {
   position: relative;
   width: 60%;
+  border-radius: 10px;
 }
 .ht_content .ht-img img {
   border-radius: 10px;
   width: 100%;
   height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -655,12 +659,16 @@ legend {
   height: 400px;
   top: 60px;
   right: 60px;
-  background: rgba(248, 248, 248, 0.8);
+  background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(30px);
           backdrop-filter: blur(30px);
   border-radius: 20px;
   z-index: 15;
+}
+.ht-tit-wrap .ht-tit {
+  width: 100%;
+  height: 100%;
 }
 .ht-tit-wrap .ht-tit .__htt {
   position: absolute;
@@ -681,13 +689,43 @@ legend {
   top: 20px;
   left: 20px;
 }
+.ht-tit-wrap .ht-tit ._htt_tr1 {
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+.ht-tit-wrap .ht-tit ._htt_tr1 span {
+  font-size: 30px;
+}
+.ht-tit-wrap .ht-tit ._htt_tr2 {
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+.ht-tit-wrap .ht-tit ._htt_tr2 span {
+  font-weight: 400;
+}
+.ht-tit-wrap .ceogoto {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Pretendard";
+  padding: 18px 46px;
+  border: 1px solid #000;
+  border-radius: 30px;
+  background: transparent;
+}
 
 #timelines {
   width: 1200px;
   padding-top: 100px;
   margin: 0 auto;
   margin-top: 100px;
-  background: #ffffff;
 }
 
 .history .main-19 {
