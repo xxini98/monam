@@ -74,6 +74,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
+    <script
+      charset="UTF-8"
+      class="daum_roughmap_loader_script"
+      src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"
+    ></script>
     <script src="./dist/js/include.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js
     "></script>
@@ -260,49 +265,44 @@
               </div>
               <div class="cp_info info-body">
                 <div class="card-info">
-                  <div
-                    class="card_wraps cd1"
-                    data-aos="fade-left"
-                    data-aos-delay="500"
-                    data-aos-easing="linear"
-                    data-aos-mirror="true"
-                    data-aos-once="false"
-                    data-tilt
-                  >
+                  <div class="card_wraps cd1" data-tilt>
                     <a href="#">
-                      <div class="card-element ct1">
+                      <div
+                        class="card-element ct1"
+                        data-aos="flip-up"
+                        data-aos-delay="400"
+                        data-aos-easing="linear"
+                        data-aos-mirror="true"
+                        data-aos-once="false"
+                      >
                         <div class="card-text"><p>윤리강령</p></div>
                       </div>
                     </a>
                   </div>
-                  <div
-                    class="card_wraps cd2"
-
-                    
-                    data-aos="fade-left"
-                    data-aos-delay="500"
-                    data-aos-easing="linear"
-                    data-aos-mirror="true"
-                    data-aos-once="false"
-                    data-tilt
-                  >
+                  <div class="card_wraps cd2" data-tilt>
                     <a href="#">
-                      <div class="card-element ct2">
+                      <div
+                        class="card-element ct2"
+                        data-aos="flip-up"
+                        data-aos-delay="450"
+                        data-aos-easing="linear"
+                        data-aos-mirror="true"
+                        data-aos-once="false"
+                      >
                         <div class="card-text"><p>투자정보</p></div>
                       </div>
                     </a>
                   </div>
-                  <div
-                    class="card_wraps cd3"
-                    data-aos="fade-left"
-                    data-aos-delay="500"
-                    data-aos-easing="linear"
-                    data-aos-mirror="true"
-                    data-aos-once="false"
-                    data-tilt
-                  >
+                  <div class="card_wraps cd3" data-tilt>
                     <a href="#">
-                      <div class="card-element ct3">
+                      <div
+                        class="card-element ct3"
+                        data-aos="flip-up"
+                        data-aos-delay="500"
+                        data-aos-easing="linear"
+                        data-aos-mirror="true"
+                        data-aos-once="false"
+                      >
                         <div class="card-text"><p>계열사 / 해외법인</p></div>
                       </div>
                     </a>
@@ -802,9 +802,25 @@
             </div>
           </div>
         </section>
+        <section id="map">
+          <div class="map-wrap container">
+            <div class="map-text-wrap">
+              <div class="map-section ms1">
+                <div class="map-content mi1">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="map-content mc1"></div>
+              </div>
+            </div>
+            <div
+              id="daumRoughmapContainer1697207317247"
+              class="root_daum_roughmap root_daum_roughmap_landing"
+              style="width: 45%"
+            ></div>
+          </div>
+        </section>
       </main>
       <footer id="footer">ddd</footer>
     </div>
-    <script src="./vanilla-tilt.min.js"></script>
   </body>
 </html>

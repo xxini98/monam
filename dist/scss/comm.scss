@@ -339,7 +339,7 @@
   content: "";
   width: 28px;
   height: 28px;
-  border: 1px solid #000;
+  border: 1px solid #393939;
   position: absolute;
   z-index: 2;
   opacity: 0.8;
@@ -369,6 +369,7 @@
 #history-intro {
   width: 100%;
   margin: 100px auto 0;
+  padding-bottom: 150px;
   background: linear-gradient(#ffffff, #f7f7f7);
   .history-timeline-head {
     position: relative;
@@ -427,6 +428,7 @@
   .ht-tit {
     width: 100%;
     height: 100%;
+    text-align: right;
     .__htt {
       position: absolute;
       z-index: 10;
@@ -550,6 +552,35 @@
   text-align: left;
   min-height: 200px;
 }
+
+#map {
+  background: linear-gradient(#f7f7f7, #ffffff);
+  height: 100%;
+  .map-wrap {
+    display: flex;
+    justify-content: center;
+    .map-text-wrap {
+      width: 45%;
+      height: 648px;
+    }
+  }
+}
+.map-section {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  background: #eeeeee;
+  .map-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// .root_daum_roughmap .root_daum_roughmap_landing {
+//   height: 100%;
+// }
 
 #footer {
   width: 100%;

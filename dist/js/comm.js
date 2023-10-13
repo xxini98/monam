@@ -79,16 +79,6 @@ gsap.utils.toArray("section").forEach((item) => {
 
 AOS.init();
 
-
-
-// tilt.js
-
-VanillaTilt.init(document.querySelectorAll(".card-element"), {
-  max: 25,
-  speed: 400,
-});
-
-
 // timeline 효과
 
 gsap.registerPlugin(ScrollTrigger);
@@ -133,8 +123,9 @@ contents.forEach((content, i) => {
     end: "+=" + (content.offsetHeight - 100),
     // end: "bottom 100",
     pin: number,
+    // pin: false,
     scrub: true,
-    markers: true,
+    markers: false,
     onLeave: function () {
       number.classList.remove("active");
       gsap.to(number, {
@@ -174,7 +165,6 @@ contents.forEach((content, i) => {
   });
 });
 
-
 // 연혁 제목 나오는 효과
 
 gsap.registerPlugin(ScrollTrigger);
@@ -202,7 +192,6 @@ tl.to(".history_title", {
   duration: 10,
   ease: "Power1.easeInOut",
 });
-
 
 // 이미지 Fade in (left & right) 효과
 
@@ -241,3 +230,9 @@ function addTimeline(project, index) {
       "-=0.5"
     );
 }
+
+  new daum.roughmap.Lander({
+  timestamp: "1697207317247",
+  key: "2ggzs",
+  mapHeight: "648",
+}).render();
