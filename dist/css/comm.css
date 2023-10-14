@@ -496,8 +496,6 @@ legend {
 }
 
 .card_wraps {
-  transform-style: preserve-3d;
-  transform: perspective(800px);
   cursor: pointer;
 }
 
@@ -510,7 +508,6 @@ legend {
   align-items: flex-end;
   position: relative;
   box-shadow: 0 0 42px 0.7px hsla(0, 0%, 0%, 0.2);
-  transition: transform 0.6s 1s;
 }
 
 .ct1 {
@@ -537,7 +534,6 @@ legend {
   width: 100%;
   color: #151515;
   font-size: 24px;
-  transform: translateZ(80px);
   transition: 0.5s;
   opacity: 0.4;
   z-index: 10;
@@ -565,9 +561,7 @@ legend {
   font-size: 24px;
   font-weight: 700;
   opacity: 1;
-  transform-style: preserve-3d;
-  transform: translate3d(-5%, -5%, 10px);
-  transition: 0.5s;
+  transition: 0.3s;
   color: #ffffff;
 }
 
@@ -595,6 +589,10 @@ legend {
   left: 28px;
   border-top-width: 0;
   border-right-width: 0;
+}
+
+.card_wraps:hover .card-element {
+  box-shadow: 0 0 50px 0.7px rgba(0, 0, 0, 0.5);
 }
 
 .card_wraps:hover .card-element::before,
@@ -797,7 +795,9 @@ legend {
   display: flex;
   justify-content: center;
 }
-#map .map-wrap .map-text-wrap {
+#map .map-wrap .map-contents-wrap {
+  display: flex;
+  flex-wrap: wrap;
   width: 45%;
   height: 648px;
 }
@@ -806,13 +806,64 @@ legend {
   position: relative;
   width: 50%;
   height: 50%;
-  background: #eeeeee;
+  background: #363636;
 }
-.map-section .map-content {
+.map-section .map-trans {
   position: absolute;
-  top: 0;
-  left: 0;
   transform: translate(-50%, -50%);
+}
+
+.map-icon-wrap {
+  width: 100px;
+  height: 100px;
+  top: 30%;
+  left: 50%;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+}
+.map-icon-wrap .map-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+}
+.map-icon-wrap .mi1 {
+  background: url(../../images/comm/location-w.png) no-repeat 0 0;
+  background-size: cover;
+}
+.map-icon-wrap .mi2 {
+  background: url(../../images/comm/phone-w.png) no-repeat 0 0;
+  background-size: cover;
+}
+.map-icon-wrap .mi3 {
+  background: url(../../images/comm/fax-w.png) no-repeat 0 0;
+  background-size: cover;
+}
+
+.map-text-wrap {
+  top: 68%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+}
+.map-text-wrap span,
+.map-text-wrap p {
+  color: #ffffff;
+}
+.map-text-wrap .mt-address {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.map-text-wrap .ad-txt {
+  font-weight: 300;
+}
+
+.mt4 {
+  top: 20%;
 }
 
 #footer {

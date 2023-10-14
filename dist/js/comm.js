@@ -235,4 +235,5 @@ function addTimeline(project, index) {
   timestamp: "1697207317247",
   key: "2ggzs",
   mapHeight: "648",
+  
 }).render();
