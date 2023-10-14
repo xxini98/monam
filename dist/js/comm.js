@@ -31,6 +31,8 @@ gsap.to(".company_info-wrap", {
 
 // "pen153" 요소를 가져옵니다.
 
+gsap.registerPlugin(ScrollTrigger);
+
 let scrollTrigger = gsap
   .timeline({
     scrollTrigger: {
@@ -231,9 +233,8 @@ function addTimeline(project, index) {
     );
 }
 
-  new daum.roughmap.Lander({
+new daum.roughmap.Lander({
   timestamp: "1697207317247",
   key: "2ggzs",
   mapHeight: "648",
-  
 }).render();
