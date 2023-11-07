@@ -47,9 +47,9 @@ let scrollTrigger = gsap
     },
     duration: 1, // 전체 애니메이션의 지속 시간을 4초로 설정
   })
-  .to(".bhead", { x: "872px", duration: 2 })
-  .to(".bbody", { x: "-1891px", duration: 2 })
-  .to(".bre", { x: "-102px", duration: 2 });
+  .to(".bhead", { x: "872px", duration: 1.5 })
+  .to(".bbody", { x: "-1891px", duration: 1.5 })
+  .to(".bre", { x: "-102px", duration: 1.5 });
 
 // ScrollTrigger가 시작되면 start와 end 값을 동적으로 변경
 
