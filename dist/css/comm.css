@@ -536,7 +536,7 @@ legend {
   font-size: 24px;
   transition: 0.5s;
   opacity: 0.4;
-  z-index: 10;
+  z-index: 11;
 }
 .card-element p::after {
   content: ">";
